@@ -18,6 +18,19 @@ void RFID::setup() {
     SPI.begin();
     mfrc522.PCD_Init();
     mfrc522.PCD_DumpVersionToSerial();
+    do {
+        byte v = mfrc522.PCD_ReadRegister(mfrc522.VersionReg);
+        switch(v) {
+            case 0x88: Serial.println(F(" = (clone)"));  return;
+            case 0x90: Serial.println(F(" = v0.0"));     return;
+            case 0x91: Serial.println(F(" = v1.0"));     return;
+            case 0x92: Serial.println(F(" = v2.0"));     return;
+            case 0x12: Serial.println(F(" = counterfeit chip"));     return;
+            default:   Serial.println(F(" = (unknown)")); 
+        }
+        mfrc522.PCD_Reset();
+        delay(1000);
+    } while (true);
 }
 
 const char* RFID::readCard() {

@@ -113,12 +113,12 @@ void RelayController::handleLights(char* lights_status, bool documents_inside) {
 
 void RelayController::openTrailer() {
     digitalWrite(TRAILER_RELAY_PIN, HIGH);
-    delay(100);
-    digitalWrite(TRAILER_RELAY_PIN, LOW);
+    // delay(100);
+    // digitalWrite(TRAILER_RELAY_PIN, LOW);
 }
 void RelayController::closeTrailer() {
-    digitalWrite(TRAILER_RELAY_PIN, HIGH);
-    delay(100);
+    // digitalWrite(TRAILER_RELAY_PIN, HIGH);
+    // delay(100);
     digitalWrite(TRAILER_RELAY_PIN, LOW);
 }
 void RelayController::openDocumentsBox() {

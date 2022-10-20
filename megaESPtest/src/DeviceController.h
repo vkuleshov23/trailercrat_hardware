@@ -78,7 +78,6 @@ void DeviceController::readSerial() {
       read_data_flag = false;
       this->receivedCallback(str_for_topic, str_for_data);
       connect = true;
-      Serial.println(str_for_topic + "--" + str_for_data);
       str_for_topic = "";
       str_for_data = "";
       return;

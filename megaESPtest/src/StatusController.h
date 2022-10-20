@@ -7,7 +7,7 @@
 class StatusController {
 private:
     RFID rfid = RFID();
-    Timer rfid_read_timer = Timer(1000);
+    Timer rfid_read_timer = Timer(100);
     byte read_try = 0;  
     char trailer_status[20];
     char documets_status[20];

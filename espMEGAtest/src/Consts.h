@@ -7,8 +7,8 @@
 #define mqtt_server                 "188.246.224.20"
 #define mqtt_port                   4646
 
-#define ssid                        "aaaa1234"
-#define password                    "12345678"
+#define ssid                        "Webfox"
+#define password                    "GfhfgkfY1234"
 
 std::string serail_number = "1";
 
